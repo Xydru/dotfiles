@@ -6,18 +6,18 @@
   home.stateVersion = "23.05";
 
   # Custom nvim plugins
-  nixpkgs = {
-    overlays = [
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          own-battery-nvim = prev.vimUtils.buildVimPlugin {
-            name = "battery";
-            src = inputs.plugin-battery;
-          };
-        };
-      })
-    ];
-  };
+  # nixpkgs = {
+  #   overlays = [
+  #     (final: prev: {
+  #       vimPlugins = prev.vimPlugins // {
+  #         own-battery-nvim = prev.vimUtils.buildVimPlugin {
+  #           name = "battery";
+  #           src = inputs.plugin-battery;
+  #         };
+  #       };
+  #     })
+  #   ];
+  # };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -110,6 +110,8 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
+
+      plenary-nvim
 
       {
         plugin = nvim-lspconfig;

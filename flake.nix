@@ -20,26 +20,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
     let
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs { inherit system; };
+      # system = "aarch64-darwin";
+      # pkgs = import nixpkgs { inherit system; };
     in {
-      darwinConfigurations."felix" = inputs.darwin.lib.darwinSystem {
-        inherit pkgs;
+      darwinConfigurations."felix" = darwin.lib.darwinSystem {
+        # inherit pkgs;
+        system = "aarch64-darwin";
+        specialArgs = { inherit inputs; };
 
         modules = [
           ./darwin.nix
+          ./overlay.nix
 
-          { 
-            users.users."felix"  = {
-              name = "felix";
-              home = "/Users/felix";
-              shell = pkgs.zsh;
-            };
-          }
-
-          inputs.home-manager.darwinModules.home-manager {
+          home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;

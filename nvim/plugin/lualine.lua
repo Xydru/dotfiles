@@ -2,7 +2,7 @@ local nvimbattery = {
   function()
     return require("battery").get_status_line()
   end,
-  color = { fg = colors.violet, bg = colors.bg },
+  -- color = { fg = colors.violet, bg = colors.bg },
 }
 
 require('lualine').setup {
@@ -29,8 +29,8 @@ require('lualine').setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location', 'nvimbattery'}
+    lualine_y = {'progress', 'location'},
+    lualine_z = nvimbattery
   },
   inactive_sections = {
     lualine_a = {},

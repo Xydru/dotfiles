@@ -1,4 +1,10 @@
 { pkgs, ... }: {
+  users.users."felix"  = {
+    name = "felix";
+    home = "/Users/felix";
+    shell = pkgs.zsh;
+  };
+
   # here go the darwin preferences and config items
   programs.zsh.enable = true;
   environment = with pkgs; {
