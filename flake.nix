@@ -20,30 +20,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
-    let
-      # system = "aarch64-darwin";
-      # pkgs = import nixpkgs { inherit system; };
-    in {
-      darwinConfigurations."felix" = darwin.lib.darwinSystem {
-        # inherit pkgs;
-        system = "aarch64-darwin";
-        specialArgs = { inherit inputs; };
+  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: {
+    darwinConfigurations."felix" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      specialArgs = { inherit inputs; }; # necessary for darwin.nix to work correctly
 
-        modules = [
-          ./darwin.nix
-          ./overlay.nix
+      modules = [
+        ./darwin.nix
+        ./overlay.nix
 
-          home-manager.darwinModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users."felix".imports = [ ./home.nix ];
+        home-manager.darwinModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users."felix".imports = [ ./home.nix ];
 
-              extraSpecialArgs = { inherit inputs; };
-            };
-          }
-        ];
-      };
+            extraSpecialArgs = { inherit inputs; };
+          };
+        }
+      ];
     };
+  };
 }
