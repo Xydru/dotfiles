@@ -64,6 +64,7 @@
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
+    loginExtra = "neofetch --ascii_distro NixOS";
     oh-my-zsh = {
       enable = true;
       plugins = [ 
