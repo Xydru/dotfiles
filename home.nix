@@ -180,4 +180,12 @@
   };
 
   programs.home-manager.enable = true; # Let Home Manager install and manage itself.
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
 }
