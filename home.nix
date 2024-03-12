@@ -5,6 +5,7 @@
   home.homeDirectory = "/Users/felix";
   home.stateVersion = "23.05";
 
+    # Custom shell commands can be executed here
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -172,10 +173,31 @@
         config = fileToString ./nvim/plugin/lualine.lua;
       }
 
+      vim-tmux-navigator
+      vim-tmux
+
+      own-iterm2-navigator
+
     ];
     
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/options.lua}
+    '';
+  };
+
+  programs.tmux = {
+    enable = true;
+    customPaneNavigationAndResize = true;
+    keyMode = "vi";
+    mouse = true;
+    prefix = "C-s";
+    plugins = with pkgs.tmuxPlugins; [
+      vim-tmux-navigator
+      gruvbox
+      battery
+    ];
+    extraConfig = ''
+      ${builtins.readFile ./tmux/options.conf}
     '';
   };
 

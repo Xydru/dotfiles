@@ -72,12 +72,29 @@
         "type": "github"
       }
     },
+    "plugin-iterm2-navigator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1593814964,
+        "narHash": "sha256-52DUiGYUVWgYvzS3kjtcMemqBjajTisquRHmNgkJ1C0=",
+        "owner": "kdheepak",
+        "repo": "vim-iterm2-navigator",
+        "rev": "e2935e172a4b430f78d9dc60b0e1bc8584733502",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kdheepak",
+        "repo": "vim-iterm2-navigator",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-battery": "plugin-battery"
+        "plugin-battery": "plugin-battery",
+        "plugin-iterm2-navigator": "plugin-iterm2-navigator"
       }
     }
   },

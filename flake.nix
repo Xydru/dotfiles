@@ -18,6 +18,11 @@
       url = "github:justinhj/battery.nvim";
       flake = false;
     };
+
+    plugin-iterm2-navigator = {
+      url = "github:kdheepak/vim-iterm2-navigator";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: {

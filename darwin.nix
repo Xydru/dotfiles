@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  users.users."felix"  = {
+  users.users."felix" = {
     name = "felix";
     home = "/Users/felix";
     shell = pkgs.zsh;
@@ -26,6 +26,17 @@
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 2;
+  };
+
+  system.activationScripts = 
+  let
+    user = "felix";
+    PROJECT_ROOT = builtins.toString ./.;
+  in {
+    extraActivation.text = ''
+      # Custom shell commands can be executed here
+      cp ${PROJECT_ROOT}/iterm/preferences/com.googlecode.iterm2.plist /Users/${user}/Library/Preferences
+    '';
   };
 
   # backwards compat; don't change

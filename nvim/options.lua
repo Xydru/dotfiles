@@ -19,3 +19,5 @@ vim.o.mouse = 'a'
 
 vim.o.splitbelow = true
 vim.o.splitright = true
+
+vim.o.linebreak = true
