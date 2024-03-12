@@ -75,15 +75,15 @@
     "plugin-iterm2-navigator": {
       "flake": false,
       "locked": {
-        "lastModified": 1593814964,
-        "narHash": "sha256-52DUiGYUVWgYvzS3kjtcMemqBjajTisquRHmNgkJ1C0=",
-        "owner": "kdheepak",
+        "lastModified": 1638588832,
+        "narHash": "sha256-kRV8jjtPmSIyn+nAAYS2+JuBxv63Qdoc+jlR0irIVdI=",
+        "owner": "rfratto",
         "repo": "vim-iterm2-navigator",
-        "rev": "e2935e172a4b430f78d9dc60b0e1bc8584733502",
+        "rev": "13ebaf71f64bd5f3f9e76dd431e819dfa284edf6",
         "type": "github"
       },
       "original": {
-        "owner": "kdheepak",
+        "owner": "rfratto",
         "repo": "vim-iterm2-navigator",
         "type": "github"
       }

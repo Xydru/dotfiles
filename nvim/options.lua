@@ -21,3 +21,11 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 vim.o.linebreak = true
+
+-- Vimtex settings
+vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_view_skim_sync = 0
+vim.g.vimtex_view_skim_activate = 1
+
+-- Custom commands
+vim.keymap.set({'i', 'n'}, '<C-F>', '<Leader>lv', { remap = true })

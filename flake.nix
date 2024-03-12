@@ -20,7 +20,7 @@
     };
 
     plugin-iterm2-navigator = {
-      url = "github:kdheepak/vim-iterm2-navigator";
+      url = "github:rfratto/vim-iterm2-navigator";
       flake = false;
     };
   };

@@ -12,6 +12,7 @@
     ripgrep
     fd
     zsh
+    texliveMedium
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -92,6 +93,7 @@
     extraPackages = with pkgs; [
       lua-language-server
       rnix-lsp
+      texlab
 
       xclip
       wl-clipboard
@@ -118,7 +120,6 @@
 
       neodev-nvim
 
-      nvim-cmp 
       {
         plugin = nvim-cmp;
         type = "lua";
@@ -176,7 +177,9 @@
       vim-tmux-navigator
       vim-tmux
 
-      own-iterm2-navigator
+      # own-iterm2-navigator # Doesn't work
+
+      vimtex
 
     ];
     

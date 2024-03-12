@@ -50,3 +50,8 @@ require('lspconfig').rnix.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+
+require('lspconfig').texlab.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
