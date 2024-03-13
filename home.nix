@@ -5,7 +5,6 @@
   home.homeDirectory = "/Users/felix";
   home.stateVersion = "23.05";
 
-    # Custom shell commands can be executed here
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -13,6 +12,7 @@
     fd
     zsh
     texliveMedium
+    # zsh-powerlevel10k
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -31,20 +31,16 @@
     # '')
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  # home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+  # Dotfiles
+  home.file = {
+    ".p10k.zsh".source = ./zsh/p10k.zsh;
 
-    # # You can also set the file content immediately.
+    # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  #};
+  };
 
   # You can also manage environment variables but you will have to manually
   # source
@@ -74,8 +70,20 @@
         "common-aliases" 
         "dirhistory"
       ];
-      theme = "eastwood";
+      # theme = "eastwood";
+      # theme = "powerlevel10k/powerlevel10k";
     };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
+    initExtra = ''
+      source ~/.p10k.zsh
+    '';
   };
 
   # Neovim Setup

@@ -6,7 +6,11 @@
   };
 
   # here go the darwin preferences and config items
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    # promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  };
+
   environment = with pkgs; {
     loginShell = zsh;
     systemPath = [ "/opt/homebrew/bin" ];
@@ -30,12 +34,13 @@
 
   system.activationScripts = 
   let
-    user = "felix";
+    USER = "felix";
     PROJECT_ROOT = builtins.toString ./.;
   in {
     extraActivation.text = ''
       # Custom shell commands can be executed here
-      cp ${PROJECT_ROOT}/iterm/preferences/com.googlecode.iterm2.plist /Users/${user}/Library/Preferences
+      cp ${PROJECT_ROOT}/iterm/preferences/com.googlecode.iterm2.plist /Users/${USER}/Library/Preferences
+      cp ${PROJECT_ROOT}/skim/preferences/net.sourceforge.skim-app.skim.plist /Users/${USER}/Library/Preferences
     '';
   };
 
