@@ -72,19 +72,19 @@
         "type": "github"
       }
     },
-    "plugin-iterm2-navigator": {
+    "plugin-mini-hipatterns": {
       "flake": false,
       "locked": {
-        "lastModified": 1638588832,
-        "narHash": "sha256-kRV8jjtPmSIyn+nAAYS2+JuBxv63Qdoc+jlR0irIVdI=",
-        "owner": "rfratto",
-        "repo": "vim-iterm2-navigator",
-        "rev": "13ebaf71f64bd5f3f9e76dd431e819dfa284edf6",
+        "lastModified": 1707650664,
+        "narHash": "sha256-LQviyWJ6b9d/swswRxznBaHaTacYu5m0E7P9rDniNAg=",
+        "owner": "echasnovski",
+        "repo": "mini.hipatterns",
+        "rev": "0a72439dbded766af753a3e7ec0a5b21d0f8ada0",
         "type": "github"
       },
       "original": {
-        "owner": "rfratto",
-        "repo": "vim-iterm2-navigator",
+        "owner": "echasnovski",
+        "repo": "mini.hipatterns",
         "type": "github"
       }
     },
@@ -94,7 +94,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plugin-battery": "plugin-battery",
-        "plugin-iterm2-navigator": "plugin-iterm2-navigator"
+        "plugin-mini-hipatterns": "plugin-mini-hipatterns"
       }
     }
   },

@@ -8,9 +8,9 @@
           name = "battery";
           src = inputs.plugin-battery;
         };
-        own-iterm2-navigator = prev.vimUtils.buildVimPlugin {
-          name = "iterm2-navigator";
-          src = inputs.plugin-iterm2-navigator;
+        own-mini-hipatterns = prev.vimUtils.buildVimPlugin {
+          name = "mini-hipatterns";
+          src = inputs.plugin-mini-hipatterns;
         };
       };
     })

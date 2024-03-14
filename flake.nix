@@ -19,8 +19,8 @@
       flake = false;
     };
 
-    plugin-iterm2-navigator = {
-      url = "github:rfratto/vim-iterm2-navigator";
+    plugin-mini-hipatterns = {
+      url = "github:echasnovski/mini.hipatterns";
       flake = false;
     };
   };
