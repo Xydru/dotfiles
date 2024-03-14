@@ -191,9 +191,15 @@
       vim-tmux-navigator
       vim-tmux
 
-      # own-iterm2-navigator # Doesn't work
-
       vimtex
+
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''require('gitsigns').setup()'';
+      }
+
+      diffview-nvim
 
     ];
     
