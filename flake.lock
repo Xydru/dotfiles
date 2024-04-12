@@ -56,22 +56,6 @@
         "type": "github"
       }
     },
-    "plugin-battery": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1705341536,
-        "narHash": "sha256-i0MqxcnMtmA7dM47/NbHKkFpIjKki5Q2Dg6OHjazUD4=",
-        "owner": "justinhj",
-        "repo": "battery.nvim",
-        "rev": "007d7943e28d1fc8c49a46c3a9c3b3f34975a0c2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "justinhj",
-        "repo": "battery.nvim",
-        "type": "github"
-      }
-    },
     "plugin-mini-hipatterns": {
       "flake": false,
       "locked": {
@@ -93,7 +77,6 @@
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-battery": "plugin-battery",
         "plugin-mini-hipatterns": "plugin-mini-hipatterns"
       }
     }

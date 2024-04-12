@@ -14,10 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plugin-battery = {
-      url = "github:justinhj/battery.nvim";
-      flake = false;
-    };
+    # plugin-battery = {
+    #   url = "github:justinhj/battery.nvim";
+    #   flake = false;
+    # };
 
     plugin-mini-hipatterns = {
       url = "github:echasnovski/mini.hipatterns";

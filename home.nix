@@ -11,7 +11,7 @@
     ripgrep
     fd
     zsh
-    texliveMedium
+    texliveFull
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -148,6 +148,12 @@
         config = ''require("nvim-tree").setup()'';
       }
 
+      {
+        plugin = neoscroll-nvim;
+        type = "lua";
+        config = ''require("neoscroll").setup()'';
+      }
+
       cmp_luasnip
       cmp-nvim-lsp
 
@@ -160,6 +166,7 @@
           p.tree-sitter-json
           p.tree-sitter-lua
           p.tree-sitter-nix
+          p.tree-sitter-norg
           p.tree-sitter-python
           p.tree-sitter-vim
           p.tree-sitter-vimdoc
@@ -177,12 +184,6 @@
       }
 
       {
-        plugin = own-battery-nvim;
-        type = "lua";
-        config = ''require("battery").setup({})'';
-      }
-
-      {
         plugin = lualine-nvim;
         type = "lua";
         config = fileToString ./nvim/plugin/lualine.lua;
@@ -196,10 +197,24 @@
       {
         plugin = gitsigns-nvim;
         type = "lua";
-        config = ''require('gitsigns').setup()'';
+        config = ''require("gitsigns").setup()'';
       }
 
       diffview-nvim
+
+      {
+        plugin = nvim-surround;
+        type = "lua";
+        config = ''require("nvim-surround").setup()'';
+      }
+
+      vim-be-good
+
+      {
+        plugin = neorg;
+        type = "lua";
+        config = fileToString ./nvim/plugin/neorg.lua;
+      }
 
     ];
     
@@ -208,7 +223,19 @@
     '';
   };
 
-  programs.tmux = {
+  programs.tmux = 
+  let 
+    # tmux-monokai = pkgs.tmuxPlugins.mkTmuxPlugin {
+    #   pluginName = "tmux-monokai";
+    #   version = "";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "uptudev";
+    #     repo = "tmux-monokai";
+    #     rev = "ae8decb4ebf88c55b12d656f5e5b979de1edb1d8";
+    #     hash = "sha256-6+tUeU9l4YHyY8t7/BEzSVLlGEu4QyXIDmdIG/odixo=";
+    #   };
+    # };
+  in {
     enable = true;
     customPaneNavigationAndResize = true;
     keyMode = "vi";
